@@ -4,55 +4,55 @@
  * ErrorResponse
  */
 export type ErrorResponse = {
-  /**
-   * Message
-   */
-  message: string;
-  /**
-   * Status
-   */
-  status?: string;
+    /**
+     * Message
+     */
+    message: string;
+    /**
+     * Status
+     */
+    status?: string;
 };
 
 /**
  * SuccessResponse
  */
 export type SuccessResponse = {
-  /**
-   * Message
-   */
-  message: string;
-  /**
-   * Status
-   */
-  status?: string;
+    /**
+     * Message
+     */
+    message: string;
+    /**
+     * Status
+     */
+    status?: string;
 };
 
 export type RootGetData = {
-  body?: never;
-  path?: never;
-  query?: never;
-  url: "/";
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/';
 };
 
 export type RootGetErrors = {
-  /**
-   * Internal server error
-   */
-  500: ErrorResponse;
+    /**
+     * Internal server error
+     */
+    500: ErrorResponse;
 };
 
 export type RootGetError = RootGetErrors[keyof RootGetErrors];
 
-export interface RootGetResponses {
-  /**
-   * Successful response
-   */
-  200: SuccessResponse;
-}
+export type RootGetResponses = {
+    /**
+     * Successful response
+     */
+    200: SuccessResponse;
+};
 
 export type RootGetResponse = RootGetResponses[keyof RootGetResponses];
 
 export type ClientOptions = {
-  baseUrl: "http://localhost:9000" | (string & {});
+    baseUrl: 'http://localhost:9000' | (string & {});
 };
